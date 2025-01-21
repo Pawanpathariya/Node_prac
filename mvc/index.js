@@ -10,6 +10,7 @@ const stuRoute=require('./routes/stuRoutes')
 const teacherRoutes=require("./routes/teacherRoutes")
 app.use("/student",stuRoute)
 app.use('/teacher',teacherRoutes)
+app.set('view engine','ejs')
 app.listen(7000,()=>{
     console.log("server run at 7000 port ");
 })

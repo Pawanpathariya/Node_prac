@@ -1,12 +1,13 @@
 const stuHome=(req,res)=>{
-res.send("This is home page ")
+res.render('home')
 }
 const stuDetail=(req,res)=>{
-res.send("This is Detail page ")
+res.render("detail")
 }
 const stuFees=(req,res)=>{
-res.send("This is fees page ")
+res.render("fees")
 }
+
 module.exports={
     stuHome,
     stuDetail,
