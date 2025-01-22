@@ -1,13 +1,19 @@
-const home=(req,res)=>{
-res.send("home page")
+const stuModel=require('../models/stuModels')
+const send=async(req,res)=>{
+const {name,rollno,Address}=req.body;
+await stuModel.create({
+    name:name,
+    rollno:rollno,
+    Address:Address
+})
+res.send("Data saved successfully")
 }
 
-const about=(req,res)=>{
-    res.send("about page")
+const get=async(req,res)=>{
+    const data= await stuModel.find();
+    res.send(data)
     }
 
-const contact=(req,res)=>{
-    res.send("contact page")    
-    }
 
-module.exports={home,about,contact}
+module.exports={send,get}
+
